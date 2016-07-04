@@ -1,0 +1,74 @@
+
+<div class="container">
+<div id="page-header">
+<h1>Zachary Hinchcliff</h1>
+<p>
+  hinchcliffz@gmail.com<br>
+  209-213-8070
+</p>
+
+</div>
+<div id="profile">
+
+  <h2>Profile</h2>
+  <ul>
+    <% @profile_items.each do |l| %>
+      <li><%= l.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="links">
+  
+  <h2>Links</h2>
+  <ul>
+    <% @links.each do |l| %>
+      <li>
+        <% if l.icon %>
+          <i class="<%= l.icon%>"></i>
+        <% end %>
+          <%= l.name %>:  <%= link_to(l.url, l.url ) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+<div id="expertise">
+  
+  <h2>Expertise</h2>
+  <ul>
+    <% @expertise_categories.each do |ec| %>
+
+      <h3><%= ec.name %></h3>
+      <p>
+        <% if ec.expertise.count != 0 %>
+          <%= ec.expertise.pluck(:name).to_sentence %>
+        <% else %>
+            <span class="expertise_item">Sorry No Expertise in <%= ec.name %> I better study...</span>
+        <% end %>
+      </p>
+    <% end %>
+  </ul>
+</div>
+
+<div id="experience_wrap">
+  <h2>Experience</h2>
+  <ul class="experiences">
+    <% @experiences.each do |xp| %>
+      <li class="experience">
+        <%= image_tag(xp.logo, class: 'pull-right logo') %>
+        <%= link_to xp.url do %><h3><%= xp.company_name %></h3><% end %>
+        <strong><%= xp.title %></strong><br>
+        <em class="experience_dates"><%= xp.start_date %>-<%= xp.end_date || "Current" %></em>
+        <ul class="experience_accomplishments">
+          <% xp.experience_accomplishments.order(importance: :desc).each do |e| %>
+
+          <li class="experience_accomplishment"><%= e.name %></li>
+        
+        <% end %></li>
+      </ul>
+    <% end %>
+  </ul>
+</div>
+</span>

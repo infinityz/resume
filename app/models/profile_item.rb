@@ -1,0 +1,2 @@
+class ProfileItem < ApplicationRecord
+end

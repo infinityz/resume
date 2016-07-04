@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Zachary Hinchcliff</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.1/js/tether.min.js"></script>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+  <body>
+  <nav class="navbar navbar-light bg-faded">
+      <a class="navbar-brand" href="#">Zachary Hinchcliff</a>
+      <ul class="nav navbar-nav">
+        
+        <li class="nav-itemn pull-right">
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="http://linkedin.com"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/infinityz"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:hinchcliffz@gmail.com"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i></a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          
+        </li>
+      </ul>
+    </nav>
+    <div class="container content">
+
+    <%= yield %>
+    </div>
+  </body>
+  
+
+</html>
