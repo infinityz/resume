@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: restume_production
-  username: restume
+  username: <%= ENV['RESTUME_DATABASE_USER'] %>
   password: <%= ENV['RESTUME_DATABASE_PASSWORD'] %>
